@@ -1,0 +1,30 @@
+{
+	"filter": {
+		"id": [
+			"setting.id {=id}"
+		],
+		"identity": [
+			"setting.identity {%identity}"
+		],
+		"label": [
+			"setting.label {%label}"
+		],
+		"description": [
+			"setting.description {%description}"
+		],
+		"created_at": [
+			"to_char(setting.created_at, 'YYYY-MM-DD') {=created_at}"
+		],
+		"created_by": [
+			"setting.created_by {=created_by}"
+		]
+	},
+	"order": {
+		"id": "setting.id",
+		"identity": "setting.identity",
+		"label": "setting.label",
+		"description": "setting.description",
+		"created_at": "setting.created_at",
+		"created_by": "setting.created_by"
+	}
+}

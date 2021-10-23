@@ -1,0 +1,38 @@
+{
+	"filter": {
+		"id": [
+			"t_user.id {=id}"
+		],
+		"username": [
+			"t_user.username {%username}"
+		],
+		"fullname": [
+			"t_user.fullname {%fullname}"
+		],
+		"email": [
+			"t_user.email {%email}"
+		],
+		"created_at": [
+			"to_char(t_user.created_at, 'YYYY-MM-DD') {=created_at}"
+		],
+		"created_by": [
+			"t_user.created_by {=created_by}"
+		],
+		"updated_at": [
+			"to_char(t_user.updated_at, 'YYYY-MM-DD') {=updated_at}"
+		],
+		"updated_by": [
+			"t_user.updated_by {=updated_by}"
+		]
+	},
+	"order": {
+		"id": "t_user.id",
+		"username": "t_user.username",
+		"fullname": "t_user.fullname",
+		"email": "t_user.email",
+		"created_at": "t_user.created_at",
+		"created_by": "t_user.created_by",
+		"updated_at": "t_user.updated_at",
+		"updated_by": "t_user.updated_by"
+	}
+}

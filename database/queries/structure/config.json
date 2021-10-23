@@ -1,0 +1,16 @@
+{
+	"filter": {
+		"organization": [
+			"t_composition.id_organization {=id_organization}",
+			"lower(t_organization.name) {%organization}"
+		],
+		"employee" : [
+			"t_composition.id_employee {=id_employee}",
+			"lower(t_employee.name) {%employee}"
+		],
+		"position" : [
+			"t_composition.id_position {=id_position}",
+			"lower(t_position.name) {%position}"
+		]
+	}
+}

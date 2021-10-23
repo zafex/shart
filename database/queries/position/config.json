@@ -1,0 +1,28 @@
+{
+	"filter": {
+		"id": [
+			"t_position.id {id}"
+		],
+		"id_organization": [
+			"t_position.id_organization {id_organization}"
+		],
+		"id_type": [
+			"t_position.id_type {id_type}"
+		],
+		"name": [
+			"t_position.name {name}"
+		],
+		"description": [
+			"t_position.description {description}"
+		],
+		"code": [
+			"t_position.code {code}"
+		],
+		"created_at": [
+			"t_position.created_at {created_at}"
+		],
+		"not_in_id": [
+			"t_position.id NOT {:not_in_id}"
+		]
+	}
+}

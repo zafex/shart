@@ -1,0 +1,72 @@
+#!/usr/bin/env php
+<?php
+
+$tables = [
+    'preparation',
+
+    'log_query_table',
+    'log_query_detail_table',
+    'log_audit_table',
+    'log_audit_detail_table',
+
+    'system_revision_table',
+
+    'system_message_table',
+    'system_message_target_table',
+
+    'system_notification_table',
+
+    'system_setting_table',
+    'system_setting_item_table',
+
+    'system_permission_table',
+
+    'system_role_table',
+    'system_role_detail_table',
+    'system_role_permission_table',
+    'system_role_notification_table',
+
+    'system_user_table',
+    'system_user_role_table',
+    'system_user_link_table',
+    'system_user_email_table',
+    'system_user_session_table',
+    'system_user_credential_table',
+    'system_user_notification_table',
+
+    'system_menu_table',
+
+    'master_organization_table',
+    'master_employee_table',
+    'master_position_table',
+    'master_structure_table',
+
+    'cms_category_table',
+    'cms_content_table',
+    'cms_content_detail_table',
+    'cms_content_category_table',
+    'cms_comment_table',
+];
+
+$files = glob(__DIR__ . '/database/migrations/*.php');
+
+foreach ($tables as $i => $name) {
+
+    foreach ($files as $file) {
+
+        if (substr($file, -4 - strlen($name)) == ($name . '.php')) {
+            rename(
+                $file,
+                sprintf(
+                    '%s/database/migrations/%s%s_%s.php',
+                    __DIR__,
+                    date('1991_12_28_Hi'),
+                    str_pad($i + 1, 2, '0', STR_PAD_LEFT),
+                    $name
+                )
+            );
+        }
+
+    }
+
+}

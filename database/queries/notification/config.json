@@ -1,0 +1,31 @@
+{
+	"filter": {
+		"id": [
+			"notification.id {=id}"
+		],
+		"sender": [
+			"message.sender {%sender}"
+		],
+		"subject": [
+			"message.subject {%subject}"
+		],
+		"body": [
+			"message.body {%body}"
+		],
+		"status": [
+			"notification.status {%status}"
+		],
+		"user": [
+			"exists (select * from prefix_sys_role_notification rn join prefix_sys_role r on r.id = rn.id_role where rn.id_notification = notification.id and r.identity {:roles})",
+			"exists (select * from prefix_sys_user_notification un join prefix_sys_user u on u.id = un.id_user where un.id_notification = notification.id and u.username {=username})"
+		]
+	},
+	"order": {
+		"id": "notification.id",
+		"sender": "message.sender",
+		"subject": "message.subject",
+		"status": "status.status",
+		"created_at": "notification.created_at",
+		"created_by": "notification.created_by"
+	}
+}
