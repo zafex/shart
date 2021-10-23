@@ -7,17 +7,17 @@ namespace Shart\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Shart\BaseController;
-use Shart\IndexAction;
 use Shart\Models\Structure;
 
 class StructureController extends BaseController
 {
-    use IndexAction;
-
     /**
      * @var string
      */
-    protected $indexName = 'composition';
+    public function index()
+    {
+        return Structure::all();
+    }
 
     /**
      * @return mixed

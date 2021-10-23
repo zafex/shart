@@ -7,17 +7,17 @@ namespace Shart\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Shart\BaseController;
-use Shart\IndexAction;
 use Shart\Models\User;
 
 class UserController extends BaseController
 {
-    use IndexAction;
-
     /**
      * @var string
      */
-    protected $indexName = 'user';
+    public function index()
+    {
+        return User::all();
+    }
 
     public function create(Request $request)
     {

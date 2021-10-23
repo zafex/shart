@@ -99,7 +99,7 @@ class UserInfo extends GenericUser implements AuthorizableContract, Arrayable
 
     public function hasPermission(string $permission): bool
     {
-        if ($this->get('type') === Type::SUPER) {
+        if ($this->get('type') === Type::USER_SUPER) {
             return true;
         }
         return \in_array($permission, $this->get('permissions'));
@@ -107,7 +107,7 @@ class UserInfo extends GenericUser implements AuthorizableContract, Arrayable
 
     public function hasRole(string $role): bool
     {
-        if ($this->get('type') === Type::SUPER) {
+        if ($this->get('type') === Type::USER_SUPER) {
             return true;
         }
         return \in_array($role, $this->get('roles'));

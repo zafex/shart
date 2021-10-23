@@ -8,19 +8,19 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\Rule;
 use Shart\BaseController;
-use Shart\IndexAction;
 use Shart\Models\Role;
 use Shart\Models\RoleComposite;
 use Shart\Services\PrivilegeService;
 
 class RoleController extends BaseController
 {
-    use IndexAction;
-
     /**
      * @var string
      */
-    protected $indexName = 'role';
+    public function index()
+    {
+        return Role::all();
+    }
 
     /**
      * @return mixed

@@ -7,19 +7,19 @@ namespace Shart\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Shart\BaseController;
-use Shart\IndexAction;
 use Shart\Models\Setting;
 use Shart\Models\SettingItem;
 use Shart\Services\SettingService;
 
 class SettingController extends BaseController
 {
-    use IndexAction;
-
     /**
      * @var string
      */
-    protected $indexName = 'setting';
+    public function index()
+    {
+        return Setting::all();
+    }
 
     public function create(string $identity, Request $request, SettingService $settingService)
     {

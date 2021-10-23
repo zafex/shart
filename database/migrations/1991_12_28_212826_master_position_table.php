@@ -29,7 +29,7 @@ class MasterPositionTable extends Migration
         Schema::create('mst_position', function (Blueprint $table) {
             migrate_add_primary($table, 'id');
             $table->string('id_organization', 100);
-            $table->string('type')->default(Type::FUNCTIONAL);
+            $table->string('type')->default(Type::TITLE_FUNCTIONAL);
             $table->string('code');
             $table->string('name');
             $table->text('description')->nullable();

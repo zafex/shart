@@ -27,17 +27,6 @@ class Installer extends Command
     /**
      * @var array
      */
-    protected $users = [
-        [
-            'username' => Type::GUEST,
-            'type' => Type::USER_GUEST,
-            'fullname' => 'Guest'
-        ],
-    ];
-
-    /**
-     * @var array
-     */
     protected $roles = [
         [
             'identity' => 'role-1',
@@ -225,12 +214,12 @@ class Installer extends Command
 
             User::updateOrCreate(
                 [
-                    'username' => Type::SYS_GUEST,
+                    'username' => Type::SYS_ANONYMOUS,
                 ],
                 [
                     'fullname' => 'Guest User',
                     'email' => $options['email'],
-                    'type' => Type::USER_GUEST,
+                    'type' => Type::USER_STANDARD,
                     'status' => 1,
                 ]
             );

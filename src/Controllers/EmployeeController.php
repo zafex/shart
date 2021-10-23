@@ -8,7 +8,6 @@ use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Shart\BaseController;
-use Shart\IndexAction;
 use Shart\Models\Employee;
 use Shart\Models\User;
 use Shart\Models\UserCredential;
@@ -16,12 +15,13 @@ use Shart\Models\UserLink;
 
 class EmployeeController extends BaseController
 {
-    use IndexAction;
-
     /**
      * @var string
      */
-    protected $indexName = 'employee';
+    public function index()
+    {
+        return Employee::all();
+    }
 
     /**
      * @return mixed

@@ -8,17 +8,17 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Ramsey\Uuid\Uuid;
 use Shart\BaseController;
-use Shart\IndexAction;
 use Shart\Models\Organization;
 
 class OrganizationController extends BaseController
 {
-    use IndexAction;
-
     /**
      * @var string
      */
-    protected $indexName = 'organization';
+    public function index()
+    {
+        return Organization::all();
+    }
 
     /**
      * @return mixed

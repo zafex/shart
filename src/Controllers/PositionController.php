@@ -7,17 +7,17 @@ namespace Shart\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Shart\BaseController;
-use Shart\IndexAction;
 use Shart\Models\Position;
 
 class PositionController extends BaseController
 {
-    use IndexAction;
-
     /**
      * @var string
      */
-    protected $indexName = 'position';
+    public function index()
+    {
+        return Position::all();
+    }
 
     /**
      * @return mixed

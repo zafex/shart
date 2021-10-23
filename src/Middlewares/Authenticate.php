@@ -60,7 +60,7 @@ class Authenticate extends IlluminateAuthenticate
                 $query->where(function ($query) use ($entity) {
                     $query->where('created_by', $this->author->getAuthor());
 
-                    if (User::class === $entity && null !== $this->user && $this->user->getAuthIdentifier() !== User::GUEST) {
+                    if (User::class === $entity && null !== $this->user && $this->user->getAuthIdentifier() !== User::SYS_ANONYMOUS) {
                         $query->orWhere(function ($query) {
                             $query->where('username', $this->user->getAuthIdentifier());
                             $query->where('status', 1);

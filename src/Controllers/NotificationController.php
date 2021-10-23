@@ -6,17 +6,17 @@ namespace Shart\Controllers;
 
 use Illuminate\Http\Request;
 use Shart\BaseController;
-use Shart\IndexAction;
 use Shart\Models\Notification;
 
 class NotificationController extends BaseController
 {
-    use IndexAction;
-
     /**
      * @var string
      */
-    protected $indexName = 'notification';
+    public function index()
+    {
+        return Notification::all();
+    }
 
     /**
      * @return mixed
